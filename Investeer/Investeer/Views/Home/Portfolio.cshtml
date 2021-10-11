@@ -1,0 +1,126 @@
+﻿@using Investeer.Models.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@using Investeer.Models.ViewModels;
+@model IEnumerable<PropertyDetail>;
+@{
+    ViewData["Title"] = "Portfolio";
+}
+<script type="text/javascript">
+    $(window).on('load', function () {
+        $("#county").val("All");
+        $("#pageIndex").val("1");
+        $("#pageSize").val("9")
+        BindData();
+    });
+    $('body').delegate('.quicksidebar', 'click', function (event) {
+        if ($("#hdproperty").length > 0) {
+            $("#hdproperty").val($(this).attr("data-prop"));
+        }
+        $(".quick-contact").addClass("active");
+        $(".quick-contact-bg").addClass("show");
+    });
+
+    $('body').delegate('.quicksidebar', 'click', function (event) {
+        if ($("#hdproperty").length > 0) {
+            $("#hdproperty").val($(this).attr("data-prop"));
+        }
+        $(".quick-contact").addClass("active");
+        $(".quick-contact-bg").addClass("show");
+    });
+
+    $('body').delegate(".page-link", 'click', function () {
+        if ($("#pageIndex").length > 0) {
+            $("#pageIndex").val($(this).attr("data-prop"));
+        }
+        BindData();
+    });
+    $('#county').on('change', function () {
+        if ($("#ddPageIndex").length > 0) {
+            $("#ddPageIndex").val(1);
+        }
+        BindData();
+    });
+
+</script>
+
+<main id="main">
+    <input type="hidden" id="pageSize" value="9" />
+    <input type="hidden" id="pageIndex" value="1" />
+
+    <!-- ======= Intro Single ======= -->
+    <section class="intro-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="title-single-box">
+                        <h1 class="title-single">Our Amazing Properties</h1>
+                        <p class="color-text-a">
+                            The Investeer provide you simplest calculations for each property such are ROI, Cap Rate and other important information. We make real estate investment simple fun and without surprises period.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Portfolio
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Intro Single-->
+    <!-- ======= Property Grid ======= -->
+    <section class="property-grid grid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="grid-option">
+                        <span>County</span>
+                        <select class="custom-select" id="county" onchange="BindData()">
+                            <option value="All" selected>All</option>
+                            <option value="Oakland">Oakland</option>
+                            <option value="Macomb">Macomb</option>
+                            <option value="Wayne">Wayne</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="allProperty">
+
+            </div>
+            @if (!SignInManager.IsSignedIn(User))
+            {
+                <div class="row text-center">
+                    <div class="col-sm-12">
+                        <a asp-controller="Account" asp-action="Register" asp-route-returnUrl="@Context.Request.Path" class="btn btn-lg btn-a mb-3">
+                            VIEW MORE
+                        </a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-sm-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="grid-option">
+                        <span> Page Index</span>
+                        <select class="custom-select" id="ddPageIndex" onchange="BindData()"></select>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </section><!-- End Property Grid Single-->
+
+</main><!-- End #main -->
+
+@await Html.PartialAsync("_QuickContact")

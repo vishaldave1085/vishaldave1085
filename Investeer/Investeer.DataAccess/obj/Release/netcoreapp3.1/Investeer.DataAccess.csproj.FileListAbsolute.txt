@@ -1,0 +1,13 @@
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\bin\Release\netcoreapp3.1\Investeer.DataAccess.deps.json
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\bin\Release\netcoreapp3.1\Investeer.DataAccess.dll
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\bin\Release\netcoreapp3.1\Investeer.DataAccess.pdb
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\bin\Release\netcoreapp3.1\Investeer.Models.dll
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\bin\Release\netcoreapp3.1\Investeer.Models.pdb
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\obj\Release\netcoreapp3.1\Investeer.DataAccess.csproj.AssemblyReference.cache
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\obj\Release\netcoreapp3.1\Investeer.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\obj\Release\netcoreapp3.1\Investeer.DataAccess.AssemblyInfoInputs.cache
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\obj\Release\netcoreapp3.1\Investeer.DataAccess.AssemblyInfo.cs
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\obj\Release\netcoreapp3.1\Investeer.DataAccess.csproj.CoreCompileInputs.cache
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\obj\Release\netcoreapp3.1\Investeer.DataAccess.csproj.CopyComplete
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\obj\Release\netcoreapp3.1\Investeer.DataAccess.dll
+F:\Projects\NetCore\Investeer\Investeer.DataAccess\obj\Release\netcoreapp3.1\Investeer.DataAccess.pdb

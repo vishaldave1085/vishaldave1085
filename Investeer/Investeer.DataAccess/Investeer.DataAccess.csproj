@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210829113857_AddForeignKeyBetweenAspNetUsersAndStatus.cs" />
+    <Compile Remove="Migrations\20210829113857_AddForeignKeyBetweenAspNetUsersAndStatus.Designer.cs" />
+    <Compile Remove="Migrations\20210829114815_AddForeignKeyInAspNetUserAndStatus.cs" />
+    <Compile Remove="Migrations\20210829114815_AddForeignKeyInAspNetUserAndStatus.Designer.cs" />
+    <Compile Remove="Migrations\20210829203336_RemoveCommanPropertyFromPropertyDetails.cs" />
+    <Compile Remove="Migrations\20210829203336_RemoveCommanPropertyFromPropertyDetails.Designer.cs" />
+    <Compile Remove="Migrations\20210830101903_TestingMigration.cs" />
+    <Compile Remove="Migrations\20210830101903_TestingMigration.Designer.cs" />
+    <Compile Remove="Migrations\20210912092243_AddPropertyImageTable.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
+    <PackageReference Include="NETCore.MailKit" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Investeer.Models\Investeer.Models.csproj" />
+    <ProjectReference Include="..\Investeer.Utility\Investeer.Utility.csproj" />
+  </ItemGroup>
+
+</Project>

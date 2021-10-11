@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>TheInvesteer - Portfolio</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css?v=21062021" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: EstateAgency - v4.3.0
+  * Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+    <div id="loader" style="width:100%; height:100%; position:fixed; background:#33333357; z-index:99999; ">
+        <div class="loader"></div>
+    </div>
+
+    <!-- ======= Property Search Section ======= -->
+    <div class="click-closed"></div>
+    <!--/ Form Search Star /-->
+    <div class="box-collapse">
+        <div class="title-box-d">
+            <h3 class="title-d">Search Property</h3>
+        </div>
+        <span class="close-box-collapse right-boxed bi bi-x"></span>
+        <div class="box-collapse-wrap form">
+            <form class="form-a">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <div class="form-group">
+                            <label class="pb-2" for="Type">Keyword</label>
+                            <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group mt-3">
+                            <label class="pb-2" for="Type">Type</label>
+                            <select class="form-control form-select form-control-a" id="Type">
+                <option>All Type</option>
+                <option>For Rent</option>
+                <option>For Sale</option>
+                <option>Open House</option>
+              </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group mt-3">
+                            <label class="pb-2" for="city">City</label>
+                            <select class="form-control form-select form-control-a" id="city">
+                <option>All City</option>
+                <option>Alabama</option>
+                <option>Arizona</option>
+                <option>California</option>
+                <option>Colorado</option>
+              </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group mt-3">
+                            <label class="pb-2" for="bedrooms">Bedrooms</label>
+                            <select class="form-control form-select form-control-a" id="bedrooms">
+                <option>Any</option>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+              </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group mt-3">
+                            <label class="pb-2" for="garages">Garages</label>
+                            <select class="form-control form-select form-control-a" id="garages">
+                <option>Any</option>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option>04</option>
+              </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group mt-3">
+                            <label class="pb-2" for="bathrooms">Bathrooms</label>
+                            <select class="form-control form-select form-control-a" id="bathrooms">
+                <option>Any</option>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+              </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group mt-3">
+                            <label class="pb-2" for="price">Min Price</label>
+                            <select class="form-control form-select form-control-a" id="price">
+                <option>Unlimite</option>
+                <option>$50,000</option>
+                <option>$100,000</option>
+                <option>$150,000</option>
+                <option>$200,000</option>
+              </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-b">Search Property</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End Property Search Section -->>
+
+
+    <!-- ======= Header/Navbar ======= -->
+    <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+        <div class="container">
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+            <a class="navbar-brand brand-logo" href="index.html"><img src="assets/img/logo.svg" class="img-fluid"></a>
+
+            <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html#process">Process</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="portfolio.html">Portfolio</a>
+                    </li>
+
+                    <!-- <li class="nav-item">
+            <a class="nav-link " href="blog-grid.html">Blog</a>
+          </li> -->
+
+                    <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href="property-single.html">Property Single</a>
+              <a class="dropdown-item " href="blog-single.html">Blog Single</a>
+              <a class="dropdown-item " href="agents-grid.html">Agents Grid</a>
+              <a class="dropdown-item " href="agent-single.html">Agent Single</a>
+            </div>
+          </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link " href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <a class="btn btn-success" href="#">Sign in</a>
+      <button type="button" class="btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse ml-md-2 ml-sm-0" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
+        <i class="bi bi-search"></i>
+      </button> -->
+
+        </div>
+    </nav>
+    <!-- End Header/Navbar -->
+
+    <main id="main">
+
+        <!-- ======= Intro Single ======= -->
+        <section class="intro-single">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-8">
+                        <div class="title-single-box">
+                            <h1 class="title-single">Our Amazing Properties</h1>
+                            <!-- <p class="color-text-a">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium
+                debitis hic ber quibusdam
+                voluptatibus officia expedita corpori.
+              </p> -->
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Portfolio
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Intro Single-->
+
+        <!-- ======= Property Grid ======= -->
+        <section class="property-grid grid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="grid-option">
+                            <form>
+                                <select class="custom-select" onchange="changeHandler(event.target.value)">
+                  <option selected>All</option>
+                  <option value="1">Macomb</option>
+                  <option value="2">Oakland</option>
+                 
+                  <option value="3">Wayne</option>
+                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4 displayNone" id="property1">
+                        <div class="card-box-a card-shadow">
+                            <div class="img-box-a">
+                                <img src="assets/img/property-1.jpg" alt="" class="img-a img-fluid">
+                            </div>
+                            <div class="card-overlay">
+                                <div class="card-overlay-a-content">
+                                    <div class="card-header-a">
+                                        <h2 class="card-title-a">
+                                            <a href="#!">Macomb  </a>
+                                        </h2>
+                                        <p class="property-address text-light">37252 Jefferson Ave, Harrison Township, Michigan</p>
+                                    </div>
+                                    <div class="card-body-a">
+                                        <!-- <div class="price-box d-flex mb-3">
+                      <span class="price-a">Amount | $ 134562.000</span>
+                    </div> -->
+                                        <a href="#" class="btn btn-primary mb-3 quicksidebar" onclick="proprtyAdress('Macomb', '37252 Jefferson Ave, Harrison Township, Michigan,')">
+                                            Invest
+                      <span class="bi bi-chevron-right"></span>
+                    </a>
+                                    </div>
+                                    <div class="card-footer-a">
+                                        <ul class="card-info d-flex justify-content-center align-self-center align-items-center">
+                                            <li style="text-align: center; padding-left: 13%; padding-right: 13%;">
+                                                <h4 class="card-info-title">APR</h4>
+                                                <span>6.5</span>
+                                            </li>
+                                            <li style="text-align: center; border-left:1px solid rgba(0, 0, 0, 0.2); padding-left: 13%; padding-right: 13%;">
+                                                <h4 class="card-info-title">LTV </h4>
+                                                <span>70%</span>
+                                            </li>
+                                            <li style="text-align: center; border-left:1px solid rgba(0, 0, 0, 0.2); padding-left: 13%; padding-right: 13%;">
+                                                <h4 class="card-info-title">Term </h4>
+                                                <span>24 </span>
+                                            </li>
+
+                                        </ul>
+
+                                        <p class="p-3 text-center text-dark border-top-white small">30% funded by investors of total $300,000.00</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 displayNone" id="property2">
+                        <div class="card-box-a card-shadow">
+                            <div class="img-box-a">
+                                <img src="assets/img/property-3.jpg" alt="" class="img-a img-fluid">
+                            </div>
+                            <div class="card-overlay">
+                                <div class="card-overlay-a-content" style="bottom: 0;">
+                                    <div class="card-header-a">
+                                        <h2 class="card-title-a">
+                                            <a href="#!">Oakland  </a>
+                                        </h2>
+                                        <p class="property-address text-light">Coming soon.</p>
+                                    </div>
+                                    <div class="card-body-a">
+                                        <!-- <div class="price-box d-flex mb-3">
+                      <span class="price-a">Amount | $ 134562.000</span>
+                    </div> -->
+                                        <!-- <a href="#" class="btn btn-primary mb-3 quicksidebar">Invest
+                      <span class="bi bi-chevron-right"></span>
+                    </a> -->
+                                    </div>
+                                    <!-- <div class="card-footer-a">
+                    <ul class="card-info d-flex justify-content-center align-self-center align-items-center">
+                      <li style="text-align: center; padding-left: 13%; padding-right: 13%;">
+                        <h4 class="card-info-title">APR</h4>
+                        <span>6.5</span>
+                      </li>
+                      <li style="text-align: center; border-left:1px solid rgba(0, 0, 0, 0.2); padding-left: 13%; padding-right: 13%;">
+                        <h4 class="card-info-title">LTV </h4>
+                        <span>70%</span>
+                      </li>
+                      <li style="text-align: center; border-left:1px solid rgba(0, 0, 0, 0.2); padding-left: 13%; padding-right: 13%;">
+                        <h4 class="card-info-title">Term </h4>
+                        <span>24 </span>
+                      </li>
+                      
+                    </ul>
+
+                    <p class="p-3 text-center text-dark border-top-white small">30% funded by investors of total $300,000.00</p>
+                    
+                  </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 displayNone
+                    " id="property3">
+                        <div class="card-box-a card-shadow">
+                            <div class="img-box-a">
+                                <img src="assets/img/property-6.jpg" alt="" class="img-a img-fluid">
+                            </div>
+                            <div class="card-overlay">
+                                <div class="card-overlay-a-content" style="bottom: 0;">
+                                    <div class="card-header-a">
+                                        <h2 class="card-title-a">
+                                            <a href="#!">Wayne  </a>
+                                        </h2>
+                                        <p class="property-address text-light">Coming soon.</p>
+                                    </div>
+                                    <div class="card-body-a">
+                                        <!-- <div class="price-box d-flex mb-3">
+                      <span class="price-a">Amount | $ 134562.000</span>
+                    </div> -->
+                                        <!-- <a href="#" class="btn btn-primary mb-3 quicksidebar">Invest
+                      <span class="bi bi-chevron-right"></span>
+                    </a> -->
+                                    </div>
+                                    <!-- <div class="card-footer-a">
+                    <ul class="card-info d-flex justify-content-center align-self-center align-items-center">
+                      <li style="text-align: center; padding-left: 13%; padding-right: 13%;">
+                        <h4 class="card-info-title">APR</h4>
+                        <span>6.5</span>
+                      </li>
+                      <li style="text-align: center; border-left:1px solid rgba(0, 0, 0, 0.2); padding-left: 13%; padding-right: 13%;">
+                        <h4 class="card-info-title">LTV </h4>
+                        <span>70%</span>
+                      </li>
+                      <li style="text-align: center; border-left:1px solid rgba(0, 0, 0, 0.2); padding-left: 13%; padding-right: 13%;">
+                        <h4 class="card-info-title">Term </h4>
+                        <span>24 </span>
+                      </li>
+                      
+                    </ul>
+
+                    <p class="p-3 text-center text-dark border-top-white small">30% funded by investors of total $300,000.00</p>
+                    
+                  </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row">
+          <div class="col-sm-12">
+            <nav class="pagination-a">
+              <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">
+                    <span class="bi bi-chevron-left"></span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item next">
+                  <a class="page-link" href="#">
+                    <span class="bi bi-chevron-right"></span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div> -->
+            </div>
+        </section>
+        <!-- End Property Grid Single-->
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <section class="section-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <div class="widget-a">
+                        <div class="w-header-a">
+                            <h3 class="w-title-a text-brand">TheInvesteer<sup>®</sup></h3>
+                        </div>
+                        <!-- <div class="w-body-a">
+              <p class="w-text-a color-text-a">
+                12801 Auburn St Suite 801. Detroit, MI 48223
+              </p>
+            </div> -->
+                        <div class="w-footer-a">
+                            <ul class="list-unstyled">
+                                <li class="color-a">
+                                    <span class="color-text-a">Phone:</span> (248) 679-2714 or (313) 317-6008
+                                </li>
+                                <li class="color-a">
+                                    <span class="color-text-a">Email:</span> <a href="mailto:Info@TheInvesteer.com">Info@TheInvesteer.com</a>
+                                </li>
+                            </ul>
+                            <div class="socials-a">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="bi bi-facebook" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="bi bi-twitter" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="bi bi-instagram" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">
+                                            <i class="bi bi-linkedin" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 section-md-t3">
+                    <div class="widget-a">
+                        <div class="w-header-a">
+                            <h3 class="w-title-a text-brand">The Company</h3>
+                        </div>
+                        <div class="w-body-a">
+                            <div class="w-body-a">
+                                <ul class="list-unstyled">
+                                    <li class="item-list-a">
+                                        <i class="bi bi-chevron-right"></i> <a href="index.html">Home</a>
+                                    </li>
+                                    <li class="item-list-a">
+                                        <i class="bi bi-chevron-right"></i> <a href="#">Process</a>
+                                    </li>
+                                    <li class="item-list-a">
+                                        <i class="bi bi-chevron-right"></i> <a href="portfolio.html">Portfolio</a>
+                                    </li>
+                                    <li class="item-list-a">
+                                        <i class="bi bi-chevron-right"></i> <a href="contact.html">Contact</a>
+                                    </li>
+                                    <li class="item-list-a">
+                                        <i class="bi bi-chevron-right"></i> <a href="#">Terms of  Services</a>
+                                    </li>
+                                    <li class="item-list-a">
+                                        <i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 section-md-t3">
+                    <div class="widget-a">
+                        <div class="w-header-a">
+                            <h3 class="w-title-a text-brand">Counties</h3>
+                        </div>
+                        <div class="w-body-a">
+                            <ul class="list-unstyled">
+                                <li class="item-list-a">
+                                    <i class="bi bi-chevron-right"></i> <a href="#">Oakland</a>
+                                </li>
+                                <li class="item-list-a">
+                                    <i class="bi bi-chevron-right"></i> <a href="#">Macomb</a>
+                                </li>
+                                <li class="item-list-a">
+                                    <i class="bi bi-chevron-right"></i> <a href="#">Wayne</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright-footer">
+                        <p class="copyright color-text-a">
+                            &copy; Copyright
+                            <span class="color-a">TheInvesteer</span> All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End  Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+
+    <div class="quick-contact-bg"></div>
+    <div class="quick-contact">
+        <div class="inner">
+            <span class="close-box-collapse right-boxed bi bi-x closebtn"></span>
+            <div class="title-box-d">
+                <h3 class="title-d">Quick Contact</h3>
+            </div>
+
+            <div class="quickform">
+                <form class="form-a" id="contactform">
+                    <input type="hidden" name="hdproperty" id="hdproperty" value="" />
+                    <div class="row">
+                        <div class="col-md-12 mb-3 divhide" id="divsuccess">
+                            <div class="text-success"> Form has been successfully submitted.</div>
+                        </div>
+                        <!-- <div class="col-md-12 mb-2">
+              <div class="form-group mt-3">
+                <label class="pb-2" for="Type">Type</label>
+                <select class="form-control form-select form-control-a" id="Type">
+                  <option>All Type</option>
+                  <option>For Rent</option>
+                  <option>For Sale</option>
+                  <option>Open House</option>
+                </select>
+              </div>
+            </div> -->
+
+
+
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label class="pb-2" for="Type">First Name <span class="text-danger">*</span></label>
+                                <input type="text" name="fname" id="fname" required data-parsley-required-message="Please enter Name" class="form-control form-control-lg form-control-a">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label class="pb-2" for="Type">Last Name <span class="text-danger">*</span></label>
+                                <input type="text" required name="lname" id="lname" data-parsley-required-message="Please enter Last Name" class="form-control form-control-lg form-control-a">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label class="pb-2" for="Type">Contact Number <span class="text-danger">*</span></label>
+                                <input type="text" name="cnumber" id="cnumber" required data-parsley-required-message="Please enter valid Contact Number" class="form-control form-control-lg form-control-a" onkeypress="if (isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label class="pb-2" for="Type">Email ID <span class="text-danger">*</span></label>
+                                <input type="email" name="email" id="email" data-parsley-required-message="Please enter a Email ID." data-parsley-email-message="Please enter valid Email ID" required class="form-control form-control-lg form-control-a">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label class="pb-2" for="Type">Desired investment Amount <span class="text-danger">*</span></label>
+                                <input type="text" name="amount" id="amount" required data-parsley-required-message="Minimum investment amount $10000" class="form-control form-control-lg form-control-a" minlength="5" onfocusout="validateAmount()" onkeypress="if (isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;">
+                                <div id="amountError" class="Error">
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label class="pb-2" for="Type">Desired Investment Period <span class="text-danger">*</span></label>
+                                <select class="form-control form-select form-control-lg form-control-a" name="period" id="period">
+                  <option>12 Months</option>
+                  <option>24 Months</option>
+                  <option>36 Months</option>
+                  <option>48 Months</option>
+                  <option>60 Months</option>
+                  </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                                <label class="pb-2" for="Type">Message</label>
+                                <textarea class="form-control form-control-lg form-control-a" name="msg" id="msg"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-md-12 mb-3">
+                            <label class="pb-2" for="Type">Captcha</label>
+
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+
+                                <input type="text" id="mainCaptcha" readonly="readonly" class="form-control form-control-md form-control-a" />
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <input type="button" id="refresh" value="Refresh" onclick="generateCaptcha()" />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <input type="text" id="txtInput" required data-parsley-required-message="Minimum investment amount $10000" class="form-control form-control-lg form-control-a" onchange="CheckValidCaptcha()" />
+                                <div id=" error " style="color:red ">
+                                </div>
+                                <div id="success">
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3 ">
+
+
+                            </div>-->
+                        <!-- propname -->
+
+                        <div class="col-md-12 mb-3" style="display: none;">
+                            <div class="form-group">
+                                <label class="pb-2" for="Type">Property Name</label>
+                                <textarea class="form-control form-control-lg form-control-a" name="propname" id="propname"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-3" style="display: none;">
+                            <div class="form-group">
+                                <label class="pb-2" for="Type">Addres</label>
+                                <textarea class="form-control form-control-lg form-control-a" name="count" id="count"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 ">
+                            <button type="submit " class="btn btn-b ">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <script src="assets/vendor/php-email-form/validate.js "></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js "></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js "></script>
+    <script src="assets/js/parsley.min.js "></script>
+    <script src="assets/js/sweetalert2.js "></script>
+
+    <script>
+        let prpertyName
+
+        function proprtyAdress(val, val1)
+
+        {
+
+            document.getElementById("propname").value = val;
+            document.getElementById("count").value = val1;
+
+        }
+
+
+        $(document).ready(function() {
+            // var mySwiper = document.querySelector('#property-carousel').swiper
+
+            // $("#property-carousel").mouseenter(function() {
+            //     mySwiper.autoplay.stop();
+
+            // });
+
+            // $("#property-carousel").mouseleave(function() {
+            //     mySwiper.autoplay.start();
+
+            // });
+            var parsleyForm = $('#contactform').parsley();
+
+
+            $("#contactform").on("submit", function() {
+
+
+                if (parsleyForm.isValid()) {
+                    var data = $("#contactform").serialize();
+
+                    $("#loader").css("display", "flex");
+                    $.ajax({
+                        type: "POST",
+                        url: "../lead2.php?rd=" + Math.random(),
+                        data: data,
+                        dataType: "json",
+                        success: function(data) {
+                            $("#loader").css("display", "none");
+                            if (data.success == "1") {
+                                //$("#divsuccess").show();
+                                //setTimeout(function(){$("#divsuccess").hide()},12000);
+
+
+                                Swal.fire(
+                                    '',
+                                    'Form submitted successfully.',
+                                    'success'
+                                );
+                                $('#fname').val('');
+                                $('#lname').val('');
+                                $('#cnumber').val('');
+                                $('#email').val('');
+                                $('#amount').val('');
+                                $('#period').val('');
+                                $('#msg').val('');
+                                $('#propname').val('');
+                                $('#count').val('');
+                                $(".quick-contact-bg").removeClass("show");
+                                $(".quick-contact").removeClass("active");
+
+                            } else {
+                                $("#sptoperror").html(data.error);
+                                $("#diverror").show();
+                            }
+                        }
+                    });
+                }
+
+                return false;
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

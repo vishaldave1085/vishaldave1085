@@ -1,0 +1,104 @@
+
+.btn-primary {
+    color: #fff;
+    background-color: #095eba;
+    border-color: #095eba;
+    box-shadow: none;
+  }
+  
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #054597;
+    border-color: #054597;
+  }
+  
+  .btn-primary:focus, .btn-primary.focus {
+    color: #fff;
+    background-color: #054597;
+    border-color: #054597;
+    box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
+  }
+  
+  .btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #054597;
+    border-color: #054597;
+  }
+  
+  .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+  .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #054597;
+    border-color: #054597;
+  }
+  
+  .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+  .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0 rgba(38, 143, 255, 0.5);
+  }
+
+
+  .card-primary.card-outline {
+    border-top: 5px solid #029b34;
+}
+
+
+
+
+
+.btn-success {
+    color: #fff;
+    background-color: #029b34;
+    border-color: #029b34;
+    box-shadow: none;
+  }
+  
+  .btn-success:hover {
+    color: #fff;
+    background-color: #007220;
+    border-color: #007220;
+  }
+  
+  .btn-success:focus, .btn-success.focus {
+    color: #fff;
+    background-color: #007220;
+    border-color: #007220;
+    box-shadow: 0 0 0 0 rgba(72, 180, 97, 0.5);
+  }
+  
+  .btn-success.disabled, .btn-success:disabled {
+    color: #fff;
+    background-color: #007220;
+    border-color: #007220;
+  }
+  
+  .btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
+  .show > .btn-success.dropdown-toggle {
+    color: #fff;
+    background-color: #007220;
+    border-color: #007220;
+  }
+  
+  .btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
+  .show > .btn-success.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0 rgba(72, 180, 97, 0.5);
+  }
+
+
+
+
+  .logo-login {
+      width: 180px;
+  }
+
+  [class*=sidebar-dark-] {
+    background-color: #1a293a;
+}
+
+.content-wrapper>.content {
+    padding: 0 1.5rem;
+}
+
+.content-header {
+    padding: 15px 1rem;
+}

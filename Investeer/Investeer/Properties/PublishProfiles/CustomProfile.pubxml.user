@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>F:\Projects\Publish\NetCoreInvesteer</_PublishTargetUrl>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAo6JGWx3mnUWaqFRghXMl4wAAAAACAAAAAAAQZgAAAAEAACAAAACY99/k8zalP8s078SuV+ASF8ZzeCoj0OWrjuB513iITQAAAAAOgAAAAAIAACAAAACeHrS7F0sHdYwWoSPIHJANLWbzGaJvgA0vKN+gf32BJCAAAADkpvCK/B8jYB/2vfwJaB/Fw6EFwsL9oa4dRfSfHDplTUAAAACk2V3vJo1AtcIN/cGbF+oMzauLIkIrlB6OlFRVakdXRjikYcKIHOLV29CNDPPnCVVh9wEfSWRG+aaAddPW+uSV</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="InvestConnection">
+      <Value>Server=A2NWPLSK14SQL-v01.shr.prod.iad2.secureserver.net%3bDatabase=betatheinvesteer%3bUser Id=betatheinvesteer%3bPassword=TSdn3rf7Yv3#fsw369%2a%3bIntegrated Security=False</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
