@@ -72,6 +72,10 @@ namespace Investeer.Models
             Contact,
             [EnumMember(Value = "ContactAdmin.html")]
             ContactAdmin,
+            [EnumMember(Value = "ConfirmEmail.html")]
+            ConfirmEmail,
+            [EnumMember(Value = "ResetPassword.html")]
+            ResetPassword,
         }
 
         public static String GetEnumMemberValue<T>(this T value) where T : struct, IConvertible

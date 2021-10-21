@@ -2,7 +2,7 @@
     var data =
     {
         county: $("#county").val()
-        , pageIndex: $("#ddPageIndex").val()
+        , pageIndex: $("#pageIndex").val()
         , pageSize: $("#ddPageSize").val()
     }
     $.ajax({
@@ -105,15 +105,16 @@ const bindtable = function (data) {
         }
         if (data.pagecount) {
             if (data.pagecount > 1) {
-                $("#ddPageIndex").parent(0).removeAttr('style');
+                $("#pagger").removeAttr('style');
             }
             else {
-                $("#ddPageIndex").parent(0).attr('style', 'display: none');
+                $("#pagger").attr('style', 'display: none');
             }
+            bindPager +="<li class='page-item'> <a class='page-link' href='#' data-prop='<'> <span class='bi bi-chevron-left'></span> </a> </li>"
             for (var i = 1; i <= data.pagecount; i++) {
-                bindPager += "<option value="+i+" "+(i==data.pageindex?"Selected":"")+"  >"+i+"</option>"
+                bindPager += "<li class='page-item " + (i == data.pageindex ? "active" : "") + "'> <a class='page-link' href='#' data-prop='" + i +"'>"+i+"</a> </li>"
             }
-
+            bindPager += "<li class='page-item next'> <a class='page-link' href='#'  data-prop='>'> <span class='bi bi-chevron-right'></span> </a> </li>"
             //if (data.pagecount > 3) {
 
             //    bindPager += "<li class='page-item " + (pageIndex == 1 ? "disabled" : '') + "'>" +
@@ -171,8 +172,11 @@ const bindtable = function (data) {
             //}
 
         }
+        if (data.pageindex) {
+            $("#pageIndex").val(data.pageindex)
+        }
     }
-    $("#ddPageIndex").html(bindPager);
+    $("#pagecount").html(bindPager);
     $("#allProperty").html(bindhtml);
 
 }

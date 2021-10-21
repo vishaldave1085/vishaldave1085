@@ -1,6 +1,7 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using Investeer.Models.ViewModels;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -147,40 +148,49 @@ namespace Investeer.Utility
 
         public static string PrepareTemplate<T, S, U>(this string TemplateString, T obj, S obj2, U obj3)
         {
+            
+
             if (obj != null)
             {
-                var properties = typeof(T).GetProperties();
+                var properties =obj.ToDictionary<string>();
                 if (properties != null)
                 {
                     foreach (var prop in properties)
                     {
-                        TemplateString = TemplateString.Replace("{" + prop.Name + "}", Convert.ToString(prop.GetValue(obj)));
+                        TemplateString = TemplateString.Replace("{" + prop.Key + "}", Convert.ToString(prop.Value));
                     }
                 }
             }
             if (obj2 != null)
             {
-                var properties = typeof(S).GetProperties();
+                var properties = obj2.ToDictionary<string>();
                 if (properties != null)
                 {
                     foreach (var prop in properties)
                     {
-                        TemplateString = TemplateString.Replace("{" + prop.Name + "}", Convert.ToString(prop.GetValue(obj2)));
+                        TemplateString = TemplateString.Replace("{" + prop.Key + "}", Convert.ToString(prop.Value));
                     }
                 }
             }
             if (obj3 != null)
             {
-                var properties = typeof(U).GetProperties();
+                var properties = obj3.ToDictionary<string>();
                 if (properties != null)
                 {
                     foreach (var prop in properties)
                     {
-                        TemplateString = TemplateString.Replace("{" + prop.Name + "}", Convert.ToString(prop.GetValue(obj3)));
+                        TemplateString = TemplateString.Replace("{" + prop.Key + "}", Convert.ToString(prop.Value));
                     }
                 }
             }
             return TemplateString;
+        }
+
+        public static Dictionary<string, TValue> ToDictionary<TValue>(this object obj)
+        {
+            var json = JsonConvert.SerializeObject(obj);
+            var dictionary = JsonConvert.DeserializeObject<Dictionary<string, TValue>>(json);
+            return dictionary;
         }
 
     }

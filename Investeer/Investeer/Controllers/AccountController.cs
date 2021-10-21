@@ -15,6 +15,7 @@ using Investeer.Models.Models;
 using static Investeer.Models.MyEnum;
 using Investeer.Models;
 using AutoMapper;
+using Investeer.DataAccess.Repository.IRepository;
 
 namespace Investeer.Controllers
 {
@@ -26,17 +27,20 @@ namespace Investeer.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
+        private readonly IEmailService _mailService;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             ILogger<AccountController> logger,
-            IMapper mapper)
+            IMapper mapper,
+            IEmailService mailService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _mapper = mapper;
+            _mailService = mailService;
         }
 
         [TempData]
@@ -132,11 +136,112 @@ namespace Investeer.Controllers
             }
             else
             {
+                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                var confirmationLink = Url.Action(nameof(ConfirmEmail), "Account", new { token, email = user.Email }, Request.Scheme);
+
+                var email = new Email();
+                email.ToEmails.Add(user.Email);
+                email.TemplateName = EmailTemplates.ConfirmEmail;
+                await _mailService.SendEmailAsync<ApplicationUser, Object, Object>(email, user, new { Link = confirmationLink }, null);
+
                 await _userManager.AddToRoleAsync(user, MyEnum.Roles.Customer.ToString());
-                if (string.IsNullOrEmpty(returnUrl))
-                    await Login(_mapper.Map<LoginViewModel>(userModel), returnUrl);
             }
-            return RedirectToAction(nameof(HomeController.Index), "Home");
+            return RedirectToAction(nameof(SuccessRegistration));
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> ConfirmEmail(string token, string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+                return View("Error");
+            var result = await _userManager.ConfirmEmailAsync(user, token);
+            return View(result.Succeeded ? nameof(ConfirmEmail) : "Error");
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult SuccessRegistration()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model.Email);
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Invalid email address.");
+                return View(model);
+            }
+                
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var link = Url.Action(nameof(ResetPassword), "Account", new { token, email = user.Email }, Request.Scheme);
+
+            var email = new Email();
+            email.ToEmails.Add(user.Email);
+            email.TemplateName = EmailTemplates.ResetPassword;
+            await _mailService.SendEmailAsync<ApplicationUser, Object, Object>(email, user, new { Link = link }, null);
+
+
+            return RedirectToAction(nameof(SuccessForgetPassword));
+        }
+
+        [AllowAnonymous]
+        public IActionResult SuccessForgetPassword()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        public IActionResult ResetPassword(string token, string email)
+        {
+            var model = new ResetPasswordViewModel { Code = token, Email = email };
+            return View(model);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel resetPassword)
+        {
+            if (!ModelState.IsValid)
+                return View(resetPassword);
+
+            var user = await _userManager.FindByEmailAsync(resetPassword.Email);
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Invalid email address");
+                return View(resetPassword);
+            }
+
+            var resetPassResult = await _userManager.ResetPasswordAsync(user, resetPassword.Code, resetPassword.Password);
+            if (!resetPassResult.Succeeded)
+            {
+                foreach (var error in resetPassResult.Errors)
+                    ModelState.AddModelError(error.Code, error.Description);
+                return View(resetPassword);
+            }
+
+            return RedirectToAction(nameof(ResetPasswordConfirmation));
+        }
+        [AllowAnonymous]
+        public IActionResult ResetPasswordConfirmation()
+        {
+            return View();
         }
 
     }

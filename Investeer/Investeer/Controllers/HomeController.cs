@@ -86,6 +86,7 @@ namespace Investeer.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "");
                 return Json(new { success = false, msg = "Something went wrong!" });
             }
         }
@@ -101,7 +102,7 @@ namespace Investeer.Controllers
                 await _mailService.SendEmailAsync<ContactViewModel, Object, Object>(email, model, null, null);
 
                 email = new Email();
-                email.ToEmails.Add(model.EmailId);
+                email.ToEmails.Add(model.Name+"<"+ model.EmailId+">");
                 email.TemplateName = EmailTemplates.Contact;
                 await _mailService.SendEmailAsync<ContactViewModel, Object, Object>(email, model, null, null);
 
@@ -109,6 +110,7 @@ namespace Investeer.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "");
                 return Json(new { success = false, msg = "Something went wrong!" });
             }
         }
@@ -134,6 +136,7 @@ namespace Investeer.Controllers
                         //lstProperty = _db.PropertyDetail.Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToList();
 
                         pageCount = 3;
+                        pageIndex = pageIndex < 1 ? 1 : pageIndex > 3 ? 3 : pageIndex;
 
                         var macomb = _db.PropertyDetail.Where(x => x.SheetName.ToLower() == "macomb").Skip(3 * (pageIndex - 1)).Take(pageSize).ToList();
                         var oakland = _db.PropertyDetail.Where(x => x.SheetName.ToLower() == "oakland").Skip(3 * (pageIndex - 1)).Take(pageSize).ToList();
@@ -182,6 +185,7 @@ namespace Investeer.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "");
                 return Json(new { msg = "Unable to fetch property" });
             }
         }

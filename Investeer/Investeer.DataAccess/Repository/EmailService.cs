@@ -28,7 +28,12 @@ namespace Investeer.DataAccess.Repository
             {
                 var email = new MimeMessage();
                 email.Sender = MailboxAddress.Parse(_mailSettings.Mail);
-                email.Sender.Name = _mailSettings.DisplayName;
+                if (email.Headers.IndexOf(HeaderId.From) > -1) email.Headers.Remove(HeaderId.From);
+                email.Headers.Add(HeaderId.From, _mailSettings.Mail);
+
+                if (email.Headers.IndexOf(HeaderId.Sender) > -1) email.Headers.Remove(HeaderId.Sender);
+                email.Headers.Add(HeaderId.Sender, _mailSettings.DisplayName);
+
                 if (mailRequest.ToAdmin)
                     email.To.Add(MailboxAddress.Parse(_mailSettings.AdminMailId));
                 else
@@ -38,6 +43,7 @@ namespace Investeer.DataAccess.Repository
                         email.To.Add(MailboxAddress.Parse(to));
                     }
                 }
+
 
                 var builder = new BodyBuilder();
                 if (mailRequest.Attachments != null)
@@ -68,7 +74,7 @@ namespace Investeer.DataAccess.Repository
                 email.Body = builder.ToMessageBody();
                 using (var smtp = new SmtpClient())
                 {
-                    smtp.CheckCertificateRevocation = false;
+                    //smtp.CheckCertificateRevocation = false;
                     smtp.Connect(_mailSettings.Host, _mailSettings.Port, SecureSocketOptions.Auto);
                     //smtp.AuthenticationMechanisms.Remove("XOAUTH2");
                     smtp.Authenticate(_mailSettings.Mail, _mailSettings.Password);
